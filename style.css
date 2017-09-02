@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css?family=Cambay|Cambo");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+* {
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 2%; }
+
+h1, h4 {
+  font-family: 'Cambay', sans-serif;
+  font-weight: regular;
+  font-size: 18px;
+  display: inline-block; }
+
+span {
+  font-family: 'Inconsolata', monospace;
+  font-weight: regular;
+  font-size: 14px; }
+
+p {
+  font-family: 'Inconsolata', monospace;
+  font-weight: regular;
+  font-size: 16px; }
+
+a {
+  text-decoration: none;
+  color: #303030; }
+
+input {
+  height: 45px;
+  width: 100%;
+  font-family: 'Inconsolata', monospace;
+  font-weight: regular;
+  font-size: 18px;
+  text-indent: 15px;
+  color: black;
+  text-shadow: 0 0 0 #303030;
+  border: none;
+  text-align: left; }
+  input:focus {
+    outline: none;
+    border: none; }
+
+img {
+  width: 100%; }
+
+.subtitle {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 2% auto 2% auto; }
+
+.title {
+  font-size: 36px; }
+
+.fa.fa-search {
+  display: inline-block;
+  font-size: 28px;
+  margin-bottom: 2%;
+  margin-right: 2%; }
+
+.input-plus-icon-wrap {
+  max-width: 400px;
+  height: 100px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: solid 2px #303030;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  padding: 2% 0 2% 0;
+  margin: 0 auto; }
+
+.input-wrap {
+  display: inline-block;
+  width: 80%; }
+
+.blinker {
+  width: 2px;
+  height: 40px;
+  background: transparent;
+  display: inline-block; }
+
+.blinker.active {
+  width: 2px;
+  height: 40px;
+  background: #303030;
+  display: inline-block; }
+
+.output-wrap > a {
+  display: block;
+  margin: 5% auto 5% auto;
+  max-width: 600px;
+  opacity: 0.8; }
+  .output-wrap > a:hover {
+    opacity: 1; }
+
+.search-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto; }
+
+.random-social-wrap {
+  margin: 5% auto 10% auto;
+  padding: 0 2% 0 0%;
+  max-width: 500px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.output-wrap {
+  margin: 20px 0 0 0; }
+
+.output-box {
+  height: 150px;
+  width: 400px;
+  margin: 0 auto;
+  border: solid 1px grey; }
+
+.random-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 2% auto 2% auto;
+  max-width: 150px;
+  padding: 15px;
+  border: 1px solid #303030; }
+  .random-button:hover {
+    cursor: pointer;
+    background: #303030;
+    color: snow; }
+
+.diagonal-wrap {
+  display: inline-block;
+  width: 20px;
+  margin-left: 2%;
+  opacity: 0; }
+
+.diagonal-wrap.visable {
+  opacity: 1; }
+
+.random-article-wrap {
+  border: solid 1px #303030;
+  padding: 3%;
+  z-index: 1; }
+
+.social-icons-wrap {
+  width: 200px;
+  margin: 2% auto 0% auto;
+  padding-top: 3%; }
+
+.fa.fa-linkedin {
+  font-size: 25px;
+  margin: 0 3% 0% 0%;
+  opacity: 0.8; }
+  .fa.fa-linkedin:hover {
+    opacity: 1; }
+
+.fa.fa-envelope {
+  font-size: 25px;
+  margin: 0 3% 0 3%;
+  opacity: 0.8; }
+  .fa.fa-envelope:hover {
+    opacity: 1; }
+
+.fa.fa-phone {
+  font-size: 25px;
+  margin: 0 3% 0 3%;
+  opacity: 0.8; }
+  .fa.fa-phone:hover {
+    opacity: 1; }
+
+.fa.fa-github {
+  font-size: 25px;
+  margin: 0 3% 0 2%;
+  opacity: 0.8; }
+  .fa.fa-github:hover {
+    opacity: 1; }
+
+.createdby-wrap {
+  max-width: 400px;
+  opacity: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  position: fixed;
+  right: -5%;
+  bottom: 50%;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+  @media screen and (max-width: 840px) {
+    .createdby-wrap {
+      position: static;
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+      margin: 4% auto 4% auto;
+      opacity: 0.8; } }
+
+.created-by {
+  font-size: 16px;
+  font-style: italic; }
+  @media screen and (max-width: 840px) {
+    .created-by {
+      font-size: 14px; } }
+
+.my-name {
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-family: 'Cambay', sans-serif;
+  font-weight: regular;
+  font-weight: 700; }
+  @media screen and (max-width: 840px) {
+    .my-name {
+      font-size: 16px; } }
+
+.linebreaker {
+  width: 35px;
+  height: 0.05em;
+  display: block;
+  background: #303030;
+  opacity: 0.5;
+  margin: 0.7% auto 0.7% auto; }
