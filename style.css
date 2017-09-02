@@ -276,8 +276,7 @@ img {
 
 .linebreaker {
   width: 35px;
-  height: 0.05em;
+  height: 1px;
   display: block;
-  background: #303030;
-  opacity: 0.5;
+  background: lightgrey;
   margin: 0.7% auto 0.7% auto; }
