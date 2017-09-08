@@ -81,7 +81,7 @@ $(document).ready(function() {
 
 
       randomArticleLink: function(data){
-        var self= this;
+        var self = this;
         $.each(data.query.pages, function(k, v) {
           $.getJSON('https://cors-anywhere.herokuapp.com/http://en.wikipedia.org/w/api.php?action=query&prop=info&pageids='+v.pageid+'&inprop=url&explaintext&format=json&callback=?', function(url) {
             $.each(url.query.pages, function(key, page) {
