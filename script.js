@@ -92,7 +92,7 @@ $(document).ready(function() {
 
       function randomHandler(data) {
 
-        console.log(data);
+       
 
         var obj = data.query.pages;
         var randomArticle = obj[Object.keys(obj)[0]];
@@ -111,7 +111,7 @@ $(document).ready(function() {
         var title = obj[Object.keys(obj)[0]].title;
         var extract = obj[Object.keys(obj)[0]].extract;
 
-        console.log(extract);
+ 
         $.get('https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=opensearch&search=' + title + '&limit=8&namespace=0&prop=extracts&exintro=&explaintext&format=json', function(info){
           var randomUrl = info[3][0];
 
@@ -139,7 +139,7 @@ $(document).ready(function() {
         var self = this;
 
         ajaxCall.then(function(data){
-          console.log(data);
+         
           
         
 
@@ -180,7 +180,7 @@ $(document).ready(function() {
 
       render: function () {
 
-        console.log("Rendered");
+        
 
       },
     
