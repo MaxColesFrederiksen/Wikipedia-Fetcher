@@ -189,7 +189,8 @@ img {
   opacity: 1; }
 
 .random-article-wrap {
-  border: solid 1px #303030;
+  border-top: solid 1px #303030;
+  border-bottom: solid 1px #303030;
   padding: 3%;
   z-index: 1; }
 
