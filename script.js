@@ -81,22 +81,50 @@ $(document).ready(function() {
 
 
       randomArticleLink: function(data){
-        var self = this;
-        $.each(data.query.pages, function(k, v) {
-          $.getJSON('https://cors-anywhere.herokuapp.com/http://en.wikipedia.org/w/api.php?action=query&prop=info&pageids='+v.pageid+'&inprop=url&explaintext&format=json&callback=?', function(url) {
-            $.each(url.query.pages, function(key, page) {
-                console.log(page);
-                var url = page.fullurl;
-                self.$el.empty();
-                self.$el.append('<a href="' + page.fullurl + '" target="_blank" class="random-article-wrap"><h1>' + page.title + '</h1><div class="diagonal-wrap"><img src="diagonal.svg"></div></a>');
+        var self= this;
+        
+        $.ajax({
+          type: 'GET',
+          datatype: 'json',
+          url: 'https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?format=json&action=query&generator=random&grnnamespace=0&prop=revisions|images|extracts&rvprop=content&exintro&namespace=0&explaintext&grnlimit=10',
+          succes: randomHandler(data)
+      });
 
-            });
-        });
-    });
+      function randomHandler(data) {
 
+        console.log(data);
+
+        var obj = data.query.pages;
+        var randomArticle = obj[Object.keys(obj)[0]];
+
+        self.getLinks(data);
+        
+      }
+     
         
       },
 
+      getLinks: function(data) {
+        var self = this;
+
+        var obj = data.query.pages;
+        var title = obj[Object.keys(obj)[0]].title;
+        var extract = obj[Object.keys(obj)[0]].extract;
+
+        console.log(extract);
+        $.get('https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=opensearch&search=' + title + '&limit=8&namespace=0&prop=extracts&exintro=&explaintext&format=json', function(info){
+          var randomUrl = info[3][0];
+
+
+
+          self.$el.empty();
+          self.$el.append('<a href="' + randomUrl + '" target="_blank" class="random-article-wrap"><h1>' + title + '</h1><p>' + extract + '</p></a>');
+
+          
+        });
+
+        
+      },
       ajaxInit: function(data){
 
         var inputValue = this.$input.val();
@@ -105,13 +133,14 @@ $(document).ready(function() {
         var ajaxCall = $.ajax({
           type: 'GET',
           dataType: 'json',
-          url: 'https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=opensearch&search=' + inputValue + '&limit=8&namespace=0&prop=images&exintro&exlimit=1&explaintext&format=json',
+          url: 'https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=opensearch&search=' + inputValue + '&limit=8&namespace=0&prop=extracts&exintro&exlimit=1&explaintext&format=json',
         });
 
         var self = this;
 
         ajaxCall.then(function(data){
           console.log(data);
+          
         
 
           if (data[1].length <= 0) {
@@ -166,21 +195,3 @@ $(document).ready(function() {
 
 
 
-
-// Parameters:
-
-/*
-
-- &explaintext = 'all text content in one giant string without markup'
-
-- &exintro = 'short summary of beginning of text content'
-
-- &prop=extracts = 'display text extract'
-
-- &action=opensearch&search=______ = 'Inputted text will be searched for'
-
-- &limit=_____ = 'Amount of possible responses per search (3, 10, 20 etc.)'
-
-- &titles=_____ = 'The specified article'
-
-*/ 
