@@ -22,6 +22,7 @@ $(document).ready(function() {
         this.$button = $('#random-button');
         this.$articleWrap = $('.random-article-wrap');
         this.$diagonal = $('.diagonal-wrap');
+        this.$form = $('form');
    
 
        
@@ -30,6 +31,7 @@ $(document).ready(function() {
       bindEvents: function () {
         //on typing whe want to fire inputstring function
         this.$input.on('input', this.inputString.bind(this));
+        this.$form.on('submit', this.formEnter.bind(this));
         this.$button.on('click', this.randomArticle.bind(this));
         this.$articleWrap.on('hover', this.diagonalAppear.bind(this));
        
@@ -38,6 +40,10 @@ $(document).ready(function() {
       },
 
       //functions
+      
+      formEnter: function(e){
+        e.preventDefault();
+      },
 
       inputString: function(e, inputValue) {
         e.preventDefault();
